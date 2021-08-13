@@ -47,6 +47,24 @@ class lista_enlazada:
     elif actual:
       anterior.siguiente=actual.siguiente
       actual.siguiente=None
+
+  def buscar(self,carne):
+    actual=self.primero
+
+    while actual and actual.estudiante.carne !=carne and actual.siguiente:
+      actual=actual.siguiente
+    if actual.estudiante.carne is carne:
+      print("encontrado")
+      print("Carne:",actual.estudiante.carne)
+      print("Nombre:",actual.estudiante.nombre)
+      print("Edad:",actual.estudiante.edad)
+      print("Dirección:",actual.estudiante.direccion)
+      print("Telefono:",actual.estudiante.telefono)
+      print("Email:",actual.estudiante.email)
+      print("Carrera:",actual.estudiante.carrera)
+      print("Puesto:",actual.estudiante.puesto)
+    else:
+      print("estudiante no encontrado")
     
     
 e1=estudiante(202010245,"Paola Carias",20,"siquinala",54645138,"paola@gmail.com","ingenieria en sistemas","programador jr")
@@ -59,5 +77,5 @@ lista_e.insertar(e2)
 lista_e.insertar(e3)
 
 lista_e.recorrer()
-lista_e.eliminar(202010254)
-lista_e.recorrer()
+lista_e.buscar(202010033)
+lista_e.buscar(20201003)
