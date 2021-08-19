@@ -58,7 +58,6 @@ class lista_circular:
 
   def buscar(self, carne):
     actual=self.primero
-    #print("Carne:",actual.estudiante.carne,"nombre:",actual.estudiante.nombre,"email:",actual.estudiante.email,"->")
     bandera=False
     if actual.estudiante.carne is carne:
       print("Carne:",actual.estudiante.carne,"nombre:",actual.estudiante.nombre,"email:",actual.estudiante.email,"->")
