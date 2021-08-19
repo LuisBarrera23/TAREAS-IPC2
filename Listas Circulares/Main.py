@@ -56,6 +56,23 @@ class lista_circular:
         actual.siguiente=self.primero.siguiente
         self.primero=self.primero.siguiente
 
+  def buscar(self, carne):
+    actual=self.primero
+    #print("Carne:",actual.estudiante.carne,"nombre:",actual.estudiante.nombre,"email:",actual.estudiante.email,"->")
+    bandera=False
+    if actual.estudiante.carne is carne:
+      print("Carne:",actual.estudiante.carne,"nombre:",actual.estudiante.nombre,"email:",actual.estudiante.email,"->")
+    else:
+      while actual and actual.estudiante.carne !=carne:
+        actual=actual.siguiente
+        if actual.estudiante.carne is carne:
+          print("Carne:",actual.estudiante.carne,"nombre:",actual.estudiante.nombre,"email:",actual.estudiante.email,"->")
+          bandera=True
+        if actual.siguiente==self.primero and not bandera:
+          print("Estudiante no encontrado")
+          break
+    
+
 e1=estudiante(202010245,"Paola Carias",20,"siquinala",54645138,"paola@gmail.com","ingenieria en sistemas","programador jr")
 e2=estudiante(202010254,"Gerson Quiroa",20,"masagua",546454486,"gerson@gmail.com","ingenieria en sistemas","programador jr")
 e3=estudiante(202010033,"Jose Rodolfo",20,"santa rosa",5467826486,"rodolfo@gmail.com","ingenieria en sistemas","programador jr") 
@@ -67,5 +84,6 @@ lista_c.insertar(e3)
 
 lista_c.recorrer()
 
-lista_c.eliminar(202010245)
-lista_c.recorrer()
+#para la tarea 2
+print("probamos buscar")
+lista_c.buscar(202010033)
